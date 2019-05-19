@@ -60,7 +60,7 @@ namespace DatingApi.Data
 
         }
 
-        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             HMACSHA512 hmac = new HMACSHA512();
             passwordSalt = hmac.Key;
