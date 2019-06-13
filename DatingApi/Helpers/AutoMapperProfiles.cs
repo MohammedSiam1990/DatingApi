@@ -32,6 +32,7 @@ namespace DatingApi.Helpers
 
              });
             CreateMap<Photo, PhotosForDetailedDto>();
+            CreateMap<UserForUpdateDto, User>();
         }
     }
 }
