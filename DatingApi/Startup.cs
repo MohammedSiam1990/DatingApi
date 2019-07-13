@@ -44,6 +44,7 @@ namespace DatingApi
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                   });
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper();
             services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();
@@ -92,6 +93,7 @@ namespace DatingApi
 
             // app.UseHttpsRedirection();
             //seeder.SeedUsers();
+            //app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials()); Becuase remove the AllowCredentials
             app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseAuthentication();
             app.UseMvc();
