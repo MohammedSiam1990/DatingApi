@@ -61,6 +61,8 @@ namespace DatingApi
 
                     };
                 });
+
+            services.AddScoped<LogUserActivity>();
         }
 
 
