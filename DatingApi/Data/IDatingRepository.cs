@@ -1,4 +1,5 @@
-﻿using DatingApi.Models;
+﻿using DatingApi.Helpers;
+using DatingApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace DatingApi.Data
 
         Task<bool> SaveAll();
 
-        Task<IEnumerable<User>> GetUsers();
+        Task<PageList<User>> GetUsers(UserParams userParams);
 
         Task<User> GetUser(int id);
 
