@@ -28,7 +28,7 @@ namespace DatingApi.Helpers
 
         //}
         public static void AddPagination(this HttpResponse response,
-            int currentPage, int totalItems, int itemsPerPage,  int totalPages)
+            int currentPage, int itemsPerPage, int totalItems,  int totalPages)
         {
             var paginationHeader = new PaginationHeader(currentPage, itemsPerPage, totalItems, totalPages);
             var camelCaseFormatter = new JsonSerializerSettings();

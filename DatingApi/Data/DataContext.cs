@@ -21,11 +21,15 @@ namespace DatingApi.Data
 
         public DbSet<Photo> Photos { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    //optionsBuilder.UseSqlServer(@"Server=.\DESKTOP-C84B5Q4;Database=DatingApp;Trusted_Connection=True;");
-        //    //optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb; Database=DatingApp; Trusted_Connection=True;");
-        //    optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb; Database=DatingAppDb; Trusted_Connection=True;");
-        //}
+        public DbSet<Like> Likes { get; set; }
+
+       protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Like>().HasKey(k => new { k.LikerId, k.LikeeId });
+
+            builder.Entity<Like>().HasOne(u => u.Likee).WithMany(u => u.Likers).HasForeignKey(u => u.LikeeId).OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Like>().HasOne(u => u.Liker).WithMany(u => u.Likees).HasForeignKey(u => u.LikerId).OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }
