@@ -9,6 +9,8 @@
     <Compile Remove="Migrations\20190320231110_CreateDatingApp.Designer.cs" />
     <Compile Remove="Migrations\20190321005325_AddedUserEntity.cs" />
     <Compile Remove="Migrations\20190321005325_AddedUserEntity.Designer.cs" />
+    <Compile Remove="Migrations\20191128160141_AddedMessageEntity.cs" />
+    <Compile Remove="Migrations\20191128160141_AddedMessageEntity.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

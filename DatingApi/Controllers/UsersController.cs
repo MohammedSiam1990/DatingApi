@@ -98,10 +98,9 @@ namespace DatingApi.Controllers
                 return Ok();
 
             return BadRequest("Failed to like user");
-
-
-            
         }
+
+       
         
 
 
