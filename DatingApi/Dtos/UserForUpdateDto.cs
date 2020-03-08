@@ -12,5 +12,6 @@ namespace DatingApi.Dtos
         public string Interests { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
+        public string Country11 { get; set; }
     }
 }
